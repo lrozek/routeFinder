@@ -1,5 +1,5 @@
 package pl.lrozek.router.domain.ids;
 
-public record Sequence(Long value)
+public record Sequence(int value)
 {
 }

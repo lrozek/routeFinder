@@ -9,6 +9,6 @@ package pl.lrozek.router.domain.coordinates;
  * Latitude: 51.5072
  * Longitude: 0.1276
  */
-public record Coordinates(Latitude latitude, Longitude longitude)
+public record Coordinates(Longitude longitude, Latitude latitude)
 {
 }
