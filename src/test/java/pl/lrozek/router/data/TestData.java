@@ -25,5 +25,8 @@ public interface TestData
 
     Coordinates coord1 = new Coordinates(new Longitude(new BigDecimal("8.489074")), new Latitude(new BigDecimal("53.615707")));
     Coordinates coord2 = new Coordinates(new Longitude(new BigDecimal("8.476499")), new Latitude(new BigDecimal("53.621193")));
-
+    Coordinates coord3 = new Coordinates(new Longitude(new BigDecimal("9.88288")), new Latitude(new BigDecimal("53.5429")));
+    Coordinates coord4 = new Coordinates(new Longitude(new BigDecimal("9.852458")), new Latitude(new BigDecimal("53.546154")));
+    Coordinates coord5 = new Coordinates(new Longitude(new BigDecimal("7.973953")), new Latitude(new BigDecimal("53.857887")));
+    Coordinates coord6 = new Coordinates(new Longitude(new BigDecimal("7.957948")), new Latitude(new BigDecimal("53.860317")));
 }
