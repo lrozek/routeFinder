@@ -1,5 +1,7 @@
 package pl.lrozek.router.domain.destination;
 
-public record Port(String name)
+import com.fasterxml.jackson.annotation.JsonValue;
+
+public record Port(@JsonValue String name)
 {
 }

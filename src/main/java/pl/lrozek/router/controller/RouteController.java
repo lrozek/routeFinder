@@ -9,6 +9,7 @@ import pl.lrozek.router.domain.VesselRoute;
 import pl.lrozek.router.domain.destination.Port;
 import pl.lrozek.router.domain.destination.Route;
 import pl.lrozek.router.domain.geo.Feature;
+import pl.lrozek.router.domain.geo.FeatureCollection;
 import pl.lrozek.router.finder.VesselRouteFinder;
 
 import java.util.Optional;
@@ -24,10 +25,10 @@ public class RouteController
     private GeoJsonMapper geoJsonMapper;
 
     @GetMapping
-    public ResponseEntity<Feature> findRouter(@RequestParam Port from, @RequestParam Port to)
+    public ResponseEntity<FeatureCollection> findRouter(@RequestParam Port from, @RequestParam Port to)
     {
         Route route = new Route(from, to);
-        Optional<Feature> vesselRoute = vesselRouteFinder.findRoute(route).map(geoJsonMapper::map);
+        Optional<FeatureCollection> vesselRoute = vesselRouteFinder.findRoute(route).map(geoJsonMapper::map);
         return vesselRoute.map(vesselRoute1 -> ResponseEntity.ok(vesselRoute1)).orElse(ResponseEntity.notFound().build());
     }
 }
