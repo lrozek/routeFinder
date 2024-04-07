@@ -59,7 +59,7 @@ public class CsvParserTest
         MatcherAssert.assertThat(vesselRoute.from(), Matchers.equalTo(new Sequence(127)));
         MatcherAssert.assertThat(vesselRoute.to(), Matchers.equalTo(new Sequence(128)));
         MatcherAssert.assertThat(vesselRoute.route(), Matchers.equalTo(new Route(new Port("DEBRV"), new Port("DEHAM"))));
-        //assertPoints(vesselRoute.coordinates());
+        assertPoints(vesselRoute.coordinates());
 
     }
 
