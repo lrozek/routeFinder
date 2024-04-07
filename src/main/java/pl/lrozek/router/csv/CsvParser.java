@@ -6,16 +6,11 @@ import com.opencsv.exceptions.CsvException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.lrozek.router.domain.VesselRoute;
-import pl.lrozek.router.domain.destination.Port;
-import pl.lrozek.router.domain.destination.Route;
-import pl.lrozek.router.domain.ids.Sequence;
-import pl.lrozek.router.domain.ids.VesselId;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 

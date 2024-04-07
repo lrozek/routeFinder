@@ -7,17 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.Resource;
+import pl.lrozek.router.data.TestData;
 import pl.lrozek.router.domain.VesselRoute;
 import pl.lrozek.router.domain.coordinates.Coordinates;
-import pl.lrozek.router.domain.coordinates.Latitude;
-import pl.lrozek.router.domain.coordinates.Longitude;
-import pl.lrozek.router.domain.destination.Port;
-import pl.lrozek.router.domain.destination.Route;
-import pl.lrozek.router.domain.ids.Sequence;
-import pl.lrozek.router.domain.ids.VesselId;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.List;
 
 @SpringBootTest
@@ -47,18 +41,18 @@ public class CsvParserTest
     {
         MatcherAssert.assertThat(points, Matchers.notNullValue());
         MatcherAssert.assertThat(points, Matchers.hasSize(2));
-        MatcherAssert.assertThat(points.get(0), Matchers.equalTo(new Coordinates(new Longitude(new BigDecimal("8.489074")), new Latitude(new BigDecimal("53.615707")))));
-        MatcherAssert.assertThat(points.get(1), Matchers.equalTo(new Coordinates(new Longitude(new BigDecimal("8.476499")), new Latitude(new BigDecimal("53.621193")))));
+        MatcherAssert.assertThat(points.get(0), Matchers.equalTo(TestData.coord1));
+        MatcherAssert.assertThat(points.get(1), Matchers.equalTo(TestData.coord2));
 
     }
 
     private static void assertVesselRoute(VesselRoute vesselRoute)
     {
         MatcherAssert.assertThat(vesselRoute, Matchers.notNullValue());
-        MatcherAssert.assertThat(vesselRoute.vesselId(), Matchers.equalTo(new VesselId("imo_9462794")));
-        MatcherAssert.assertThat(vesselRoute.from(), Matchers.equalTo(new Sequence(127)));
-        MatcherAssert.assertThat(vesselRoute.to(), Matchers.equalTo(new Sequence(128)));
-        MatcherAssert.assertThat(vesselRoute.route(), Matchers.equalTo(new Route(new Port("DEBRV"), new Port("DEHAM"))));
+        MatcherAssert.assertThat(vesselRoute.vesselId(), Matchers.equalTo(TestData.imo_9462794));
+        MatcherAssert.assertThat(vesselRoute.from(), Matchers.equalTo(TestData.seq_127));
+        MatcherAssert.assertThat(vesselRoute.to(), Matchers.equalTo(TestData.seq_128));
+        MatcherAssert.assertThat(vesselRoute.route(), Matchers.equalTo(TestData.debrvToDeham));
         assertPoints(vesselRoute.coordinates());
 
     }
