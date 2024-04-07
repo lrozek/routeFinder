@@ -1,5 +1,6 @@
 package pl.lrozek.router.data;
 
+import pl.lrozek.router.domain.VesselRoute;
 import pl.lrozek.router.domain.coordinates.Coordinates;
 import pl.lrozek.router.domain.coordinates.Latitude;
 import pl.lrozek.router.domain.coordinates.Longitude;
@@ -9,6 +10,7 @@ import pl.lrozek.router.domain.ids.Sequence;
 import pl.lrozek.router.domain.ids.VesselId;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public interface TestData
 {
@@ -29,4 +31,9 @@ public interface TestData
     Coordinates coord4 = new Coordinates(new Longitude(new BigDecimal("9.852458")), new Latitude(new BigDecimal("53.546154")));
     Coordinates coord5 = new Coordinates(new Longitude(new BigDecimal("7.973953")), new Latitude(new BigDecimal("53.857887")));
     Coordinates coord6 = new Coordinates(new Longitude(new BigDecimal("7.957948")), new Latitude(new BigDecimal("53.860317")));
+
+    VesselRoute vesselRoute1 = new VesselRoute(imo_9462794, seq_127, seq_128, debrvToDeham, List.of(coord1, coord2));
+    VesselRoute vesselRoute2 = new VesselRoute(imo_9462794, seq_127, seq_128, debrvToDeham, List.of(coord3, coord4, coord5));
+    VesselRoute vesselRoute3 = new VesselRoute(imo_9462794, seq_127, seq_128, debrvToDeham, List.of(coord1, coord6));
+    VesselRoute vesselRoute4 = new VesselRoute(imo_9462794, seq_127, seq_128, debrvToDeham, List.of(coord1, coord2, coord3, coord6));
 }

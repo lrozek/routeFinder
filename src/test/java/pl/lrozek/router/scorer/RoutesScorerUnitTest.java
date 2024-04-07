@@ -14,10 +14,11 @@ import java.util.Map;
 public class RoutesScorerUnitTest
 {
     private RoutesScorer scorer = new RoutesScorer();
-    private VesselRoute route1 = new VesselRoute(TestData.imo_9462794, TestData.seq_127, TestData.seq_128, TestData.debrvToDeham, List.of(TestData.coord1, TestData.coord2));
-    private VesselRoute route2 = new VesselRoute(TestData.imo_9462794, TestData.seq_127, TestData.seq_128, TestData.debrvToDeham, List.of(TestData.coord3, TestData.coord4, TestData.coord5));
-    private VesselRoute route3 = new VesselRoute(TestData.imo_9462794, TestData.seq_127, TestData.seq_128, TestData.debrvToDeham, List.of(TestData.coord1, TestData.coord6));
-    private VesselRoute route4 = new VesselRoute(TestData.imo_9462794, TestData.seq_127, TestData.seq_128, TestData.debrvToDeham, List.of(TestData.coord1, TestData.coord2, TestData.coord3, TestData.coord6));
+
+    private VesselRoute route1 = TestData.vesselRoute1;
+    private VesselRoute route2 = TestData.vesselRoute2;
+    private VesselRoute route3 = TestData.vesselRoute3;
+    private VesselRoute route4 = TestData.vesselRoute4;
 
 
     @Test
