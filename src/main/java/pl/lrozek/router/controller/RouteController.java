@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.lrozek.router.domain.VesselRoute;
 import pl.lrozek.router.domain.destination.Port;
 import pl.lrozek.router.domain.destination.Route;
+import pl.lrozek.router.domain.geo.Feature;
 import pl.lrozek.router.finder.VesselRouteFinder;
 
 import java.util.Optional;
@@ -19,11 +20,14 @@ public class RouteController
     @Autowired
     private VesselRouteFinder vesselRouteFinder;
 
+    @Autowired
+    private GeoJsonMapper geoJsonMapper;
+
     @GetMapping
-    public ResponseEntity<VesselRoute> findRouter(@RequestParam Port from, @RequestParam Port to)
+    public ResponseEntity<Feature> findRouter(@RequestParam Port from, @RequestParam Port to)
     {
         Route route = new Route(from, to);
-        Optional<VesselRoute> vesselRoute = vesselRouteFinder.findRoute(route);
+        Optional<Feature> vesselRoute = vesselRouteFinder.findRoute(route).map(geoJsonMapper::map);
         return vesselRoute.map(vesselRoute1 -> ResponseEntity.ok(vesselRoute1)).orElse(ResponseEntity.notFound().build());
     }
 }
