@@ -3,6 +3,7 @@ package pl.lrozek.router.scoring;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
+import org.springframework.stereotype.Component;
 import pl.lrozek.router.domain.VesselRoute;
 import pl.lrozek.router.domain.coordinates.Coordinates;
 
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@Component
 public class RoutesScorer
 {
 

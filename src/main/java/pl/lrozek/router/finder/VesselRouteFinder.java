@@ -1,5 +1,7 @@
 package pl.lrozek.router.finder;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import pl.lrozek.router.dao.VesselRoutesDao;
 import pl.lrozek.router.domain.VesselRoute;
 import pl.lrozek.router.domain.destination.Route;
@@ -9,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+@Component
 public class VesselRouteFinder
 {
 
@@ -16,6 +19,7 @@ public class VesselRouteFinder
     private RoutesScorer routesScorer;
     private VesselRoutesDao vesselRoutesDao;
 
+    @Autowired
     public VesselRouteFinder(RoutesScorer routesScorer, VesselRoutesDao vesselRoutesDao)
     {
         this.routesScorer = routesScorer;
