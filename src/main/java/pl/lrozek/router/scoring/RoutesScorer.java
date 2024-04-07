@@ -12,7 +12,6 @@ import java.util.stream.Collectors;
 
 public class RoutesScorer
 {
-    Object noop = null;
 
     public Map<VesselRoute, Integer> score(List<VesselRoute> vesselRoutes)
     {
